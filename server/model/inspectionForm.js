@@ -1,0 +1,106 @@
+const mongoose = require("mongoose");
+
+const Schema = mongoose.Schema;
+
+const InspectionSchema = new Schema({
+    vehicleName:{
+        type:String,
+        required:true,
+    },
+    price:{
+        type:String,
+        required:true,
+    },
+    financerName:{
+        type:String,
+        required:true,
+    },
+    registerNumber:{
+        type:String,
+        required:true,
+    },
+    manufacturingDate:{
+        type:Date,
+        required:true
+    },
+    registrationDate:{
+        type:Date,
+        required:true
+    },
+    noOfOwner:{
+        type:Number,
+        required:true,
+    },
+    odometerReading:{
+        type:Number,
+        required:true,
+    },
+    transmission:{
+        type:String,
+        enum:["Automatic","Manual"],
+        required:true
+    },
+    fuelType:{
+        type:String,
+        enum:["Petrol","Diesel","CNG"],
+        required:true
+    },
+    colour:{
+        type:String,
+        required:true,
+    },
+    vehicleType:{
+        type:String,
+        required:true,
+    },
+    engineNumber:{
+        type:String,
+        required:true,
+    },
+    chasisNumber:{
+        type:String,
+        required:true,
+    },
+    loanNumber:{
+        type:String,
+        required:true,
+    },
+    rcAvailable:{
+        type:String,
+        enum:["Yes","No"],
+        required:true
+    },
+    insurance:{
+        type:String,
+        enum:["Available","Not-Available"],
+        required:true
+    },
+    hypothecation:{
+        type:String,
+        enum:["Yes","No"],
+        required:true
+    },
+    financerName:{
+        type:String,
+        required:true,
+    },
+    roadTax:{
+        type:String,
+        enum:["Yes","No"],
+        required:true
+    },
+    customerName:{
+        type:String,
+        required:true,
+    },
+    clientName:{
+        type:String,
+        required:true,
+    },
+},{
+    timestamps:true
+})
+
+const Inspection = mongoose.model("Inspection",InspectionSchema);
+
+module.exports = Inspection;
